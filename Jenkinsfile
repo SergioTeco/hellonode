@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE_NAME = "sergito23/hellonode"
     }
     stages {
-        stage('Build Docker Image') 
+        stage('Build Docker Image') {
             steps {
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
