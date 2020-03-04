@@ -6,10 +6,7 @@ pipeline {
         DOCKER_IMAGE_NAME = "sergito23/hellonode"
     }
     stages {
-        stage('Build Docker Image') {
-            when {
-                branch 'master'
-            }
+        stage('Build Docker Image') 
             steps {
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
@@ -17,9 +14,6 @@ pipeline {
             }
         }
         stage('Push Docker Image') {
-            when {
-                branch 'master'
-            }
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', '64295789-f281-4160-ac03-797d2ba460e4') {
@@ -30,9 +24,6 @@ pipeline {
             }
         }
         stage('DeployToProduction') {
-            when {
-                branch 'master'
-            }
             steps {
                 milestone(1)
                 kubernetesDeploy(
