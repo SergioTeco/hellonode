@@ -26,6 +26,10 @@ pipeline {
                 }
             }
         }
-       
+        stage('Deploy') {
+            steps {
+                sh 'docker run sergito23/hellonode'
+            }
+        }   
     }
 }
