@@ -26,15 +26,6 @@ pipeline {
                 }
             }
         }
-        stage('DeployToProduction') {	
-            steps {	
-                milestone(1)	
-                kubernetesDeploy(	
-                    kubeconfigId: 'fdaa8db3-7684-4637-8f13-f01dc6f1c5d3',	
-                    configs: 'k8s_svc_deploy.yaml',	
-                    enableConfigSubstitution: true	
-                )	
-            }	
-        }
+       
     }
 }
