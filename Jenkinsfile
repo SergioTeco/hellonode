@@ -30,7 +30,7 @@ pipeline {
            //steps {
                 //sh 'docker run sergito23/hellonode , sleep 30'
                 //sh 'docker stop sergito23/hellonode'
-            }
-        }   
+            //}
+        //}   
     }
 }
