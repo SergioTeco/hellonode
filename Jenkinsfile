@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker run sergito23/hellonode'
-                sh 'sleep 1m'
+                sh 'sleep 30'
                 sh 'docker stop sergito23/hellonode'
             }
         }   
